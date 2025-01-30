@@ -1,0 +1,23 @@
+---
+type Certificate = {
+  title: string;
+  description: string;
+  link: string;
+  image: string;
+};
+
+const certificates: Certificate[] = Astro.props.certificates;
+---
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {certificates.map(cert => (
+      <div class="w-80 max-w-xs rounded-lg border border-gray-300 shadow-lg overflow-hidden  hover:shadow-[0_0_10px_#fff] hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer">
+        <img class=" w-full h-1/2 object-cover" src={cert.image} alt={cert.title} />
+        <div class="mb-4 p-4">
+          <h3 class="text-xl font-semibold text-yellow-300/90 text-center mb-2">{cert.title}</h3>
+          <p class="text-white text-center mb-4 text-sm">{cert.description}</p>
+          <a href={cert.link} target="_blank" class="inline-block bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-500 w-full text-center">Validate Certification</a>
+        </div>
+      </div>
+    ))}
+  </div>

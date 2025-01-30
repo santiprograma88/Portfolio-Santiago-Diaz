@@ -1,11 +1,130 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Mail from "../components/icons/Mail.astro";
+import Card from "../components/Card.astro";
+import Certificates from "../components/Certificates.astro";
+import SkillSet from "../components/SkillSet.astro";
+import Footer from "../components/Footer.astro";
+
+const certificates = [
+  {
+    title: 'Advanced React',
+    description: 'Learned custom hooks, useContext, useReducer also learned controled forms, testing and design patterns.',
+    link: 'https://coursera.org/share/000aeab600e6a3e3ad78dc8392a2800f',
+    image: 'https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~JXHT0T2UXIU7/CERTIFICATE_LANDING_PAGE~JXHT0T2UXIU7.jpeg',
+  },
+  {
+    title: 'Programming with JavaScript',
+    description: 'Developed skills in JavaScript, learned about ES6, promises, async/await, DOM manipulation and much more.',
+    link: 'https://coursera.org/share/b544e445aeab1cc9d2eeb318c60b48df',
+    image: 'https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~M1WAEACLS8RE/CERTIFICATE_LANDING_PAGE~M1WAEACLS8RE.jpeg',
+  },
+  {
+    title: 'Meta Front-End Developer',
+    description: 'Learned about HTML5, CSS3, JavaScript, React, git, github, tailwind, UX/UI principles,  astro and Front-End basics.',
+    link: 'https://coursera.org/share/98d389065805f2d63204f44b42310ff4',
+    image: 'https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~PNI14J6PKHPD/CERTIFICATE_LANDING_PAGE~PNI14J6PKHPD.jpeg',
+  },
+  {
+  title: 'React Basics',
+    description: 'learned all about React basics, components, jsx state, hooks, props, and much more.',
+    link: 'https://coursera.org/share/1d344cde7885b729d3490d4e02d6fef3',
+    image: 'https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~TIWYB18LHWJZ/CERTIFICATE_LANDING_PAGE~TIWYB18LHWJZ.jpeg',
+  },
+
+  {
+  title: 'HTML, CSS in depth',
+    description: 'learned all about html tags, web structure, CSS and frameworks like bootstrap and tailwind.',
+    link: 'https://coursera.org/share/1d344cde7885b729d3490d4e02d6fef3',
+    image: 'https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~TIWYB18LHWJZ/CERTIFICATE_LANDING_PAGE~TIWYB18LHWJZ.jpeg',
+  },
+  {
+  title: 'Introduction to Front-End',
+    description: 'learned all about web development, how the web works, how to create a website, and much more.',
+    link: 'https://coursera.org/share/70324d89b3a7a700e03e4b1e5d190755',
+    image: 'https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~3DRV9CY3Z626/CERTIFICATE_LANDING_PAGE~3DRV9CY3Z626.jpeg'
+  },
+];
+
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Santiago Diaz Portfolio - Frontend Developer and Software Engineering Student" description="available to work, web developer, and software engineering student. Currently living in las vegas, NV, USA. Especialized in Frontend Development.">
+	<main id="home">
+		<section class="w-full lg:w-[740px] mx-auto py-44">
+
+		<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+			Hey, I'm Santiago Diaz<a 
+			href="https://www.linkedin.com/in/santiago-d%C3%ADaz-lopera-972485310/" 
+			target="_blank"
+			rel="noopener noreferrer"
+			class="flex justify-center items-center"
+			>
+			 <Badge>Available to work</Badge>
+		     </a>
+		</h1>
+		<h2 class="text-white text-2xl text-wrap">
+			<span>No prior experience.</span><span class="text-yellow-200/90"> 
+				Web developer, and Software Engineering Student.</span>
+			 Currently living in Las Vegas, NV, USA. <span class="text-red-300/90">
+				Especialized in Frontend Development.
+			</span>
+		</h2>
+
+		<nav class="flex gap-x-2 text-white mt-8">
+			<SocialPill href="">
+				    <LinkedIn class="size-6 text-white"/>
+					LinkedIn
+					</SocialPill>
+					<SocialPill>
+					<GitHub class="size-6 text-white"/>
+					GitHub
+					</SocialPill>
+					<SocialPill>
+					<Mail class="size-6 text-white"/>
+					diazlope68@hotmail.com
+					</SocialPill>
+				</nav>
+		</section>
+
+		<section class="mt-20 flex flex-col items-center mx-auto w-full">
+			<h2 id="projects" class="text-white text-4xl font-bold mb-6">Projects</h2>
+			<div class="flex gap-6 flex-wrap">
+			<Card 
+			image="https://www3.minijuegosgratis.com/v3/games/thumbnails/1969_1.jpg"
+			title="Arkanoid game"
+			description="A simple arkanoid game made with canvas HTML5 tag and using vanilla JavaScript"
+			repoUrl="https://github.com/santiprograma88?tab=repositories"
+			linkName="Arkanoid repo"
+			/>
+			<Card 
+			image="https://user-images.githubusercontent.com/20054991/226729651-63c82654-20d7-4783-b1a9-4c97afae96d4.png"
+			title="Little lemon landing page"
+			description="A simple landing page made with React, JavaScript, CSS and figma for planning design"
+			repoUrl="https://github.com/santiprograma88?tab=repositories"
+			linkName="Website repo"
+			/>
+		</div>
+		</section>
+
+		<section class="mt-44 flex flex-col items-center mx-auto w-full">
+			<h2 id="education" class="text-white text-4xl font-bold mb-6">Education</h2>
+			<Certificates certificates={certificates} />
+		</section>
+
+		<section class="mt-60">
+			<h2 class="text-white text-4xl font-bold text-center">Skillset</h2>
+			<SkillSet />
+		</section>
+
+		<section class="mt-40">
+			<div>
+				<Footer />
+			</div>
+		</section>
+	</main>
 </Layout>

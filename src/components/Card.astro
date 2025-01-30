@@ -1,0 +1,14 @@
+---
+const { title, description, image, repoUrl, linkName } = Astro.props;
+---
+
+<div class="hover:shadow-[0_0_10px_#fff] hover:scale-110 transition-all duration-300 ease-in-out max-w-xs rounded-lg border border-gray-300 shadow-md overflow-hidden cursor-pointer">
+<img class="w-full h-1/2" src={image} alt="project image" />
+<div class="flex flex-col justify-between mt-2 px-2 py-2">
+    <h3 class="text-xl font-bold text-yellow-200/90 mb-2 text-center">{title}</h3>
+    <p class="text-white text-center mb-4">{description}</p>
+    <a class="inline-block bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-500 mb-0 w-4/5 mx-auto" href={repoUrl} target="_blank" >
+        <button class="w-full text-center">{linkName}</button>
+    </a>
+</div>
+</div>

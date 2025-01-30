@@ -1,0 +1,22 @@
+---
+const skills = [
+  { name: "HTML", image: "/ImagesPortfolio/HTML5.webp" },
+  { name: "CSS", image: "/ImagesPortfolio/CSS3 2.png" },
+  { name: "JavaScript", image: "/ImagesPortfolio/JavaScript-logo.png" },
+  { name: "React", image: "/ImagesPortfolio/ReactLogo.webp" },
+  { name: "Git", image: "/ImagesPortfolio/Git icon.png" },
+  { name: "GitHub", image: "/ImagesPortfolio/ghicon.png" },
+  { name: "Tailwind CSS", image: "/ImagesPortfolio/Tailwind_CSS_Logo.svg.png" },
+  { name: "Astro", image: "/ImagesPortfolio/Astro 2.png"}
+];
+---
+
+<div class="overflow-hidden mt-28 mb-14">
+  <div class="flex animate-marquee gap-8">
+    {[...skills].map(skill => (
+      <div class="flex items-center justify-center">
+        <img class="w-20 h-20 object-contain" src={skill.image} alt={skill.name} />
+      </div>
+    ))}
+  </div>
+</div>
